@@ -1,9 +1,9 @@
 {
-  "name": "vue-tailwind-template",
+  "name": "csv-map",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/connectshark/vue-tailwind-template"
+    "url": "https://github.com/connectshark/csv-map"
   },
   "license": "MIT",
   "version": "0.1.0",
@@ -17,6 +17,7 @@
     "url": "https://github.com/connectshark"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "pinia": "^2.2.2",
     "vue": "^3.5.8",
     "vue-router": "^4.4.5"
