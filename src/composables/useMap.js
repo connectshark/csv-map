@@ -6,6 +6,8 @@ export default (filterList) => {
   const map = ref(null)
   const marketIcon = ref(null)
   const markersGroup = ref(null)
+
+  const userMarker = ref(null)
   const iceIcon = ref(null)
 
   const {
@@ -37,10 +39,10 @@ export default (filterList) => {
     })
   }
 
-  const init = async (center) => {
+  const init = async () => {
     map.value = L.map('map', {
       zoom: 16,
-      center: center || [25.023293, 121.468481],
+      center: [25.023293, 121.468481],
       renderer: L.canvas()
     })
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -52,14 +54,15 @@ export default (filterList) => {
       ],
       attribution: ''
     }).addTo(map.value)
-    const user = L.icon({
-      iconUrl: 'https://cdn.jsdelivr.net/gh/alohe/avatars/png/toon_7.png',
-      iconSize: [30, 30],
-      popupAnchor: [0, -15]
-    })
-    L.marker(center, {
-      icon: user
-    }).bindPopup('Hi，大概的位置').addTo(map.value).openPopup()
+    userMarker.value = L.marker([25.023293, 121.468481], {
+      zIndexOffset: 1,
+      icon: L.icon({
+        iconUrl: 'https://cdn.jsdelivr.net/gh/alohe/avatars/png/notion_3.png',
+        iconSize: [30, 30],
+        popupAnchor: [0, -15],
+      })
+    }).bindPopup('Hi，大概的位置').addTo(map.value)
+
     marketIcon.value = L.icon({
       iconUrl: '/familymart.svg',
       iconSize: [30, 30],
@@ -67,13 +70,25 @@ export default (filterList) => {
     })
     iceIcon.value = L.icon({
       iconUrl: '/ice-cream.svg',
-      iconSize: [30, 30],
+      iconSize: [30, 40]
     })
     markersGroup.value = L.layerGroup().addTo(map.value)
     map.value.on('moveend', resetMarker)
     map.value.on('resize', resetMarker)
   }
 
+  const panTo = async (latLng) => {
+    userMarker.value.remove()
+    userMarker.value = L.marker(latLng, {
+      zIndexOffset: 1,
+      icon: L.icon({
+        iconUrl: 'https://cdn.jsdelivr.net/gh/alohe/avatars/png/toon_7.png',
+        iconSize: [30, 30],
+        popupAnchor: [0, -15]
+      })
+    }).bindPopup('Hi，大概的位置').addTo(map.value).openPopup()
+    map.value.flyTo(latLng)
+  }
 
   onBeforeUnmount(() => {
     map.value.remove()
@@ -81,6 +96,7 @@ export default (filterList) => {
 
   return {
     init,
-    resetMarker
+    resetMarker,
+    panTo
   }
 }

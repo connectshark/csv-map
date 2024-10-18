@@ -38,7 +38,7 @@ fetchBrands()
       <h5 class="title mb-4"><i class="bx bx-cube-alt" />Brands</h5>
       <ul class="*:mb-1">
         <li class="last:mb-0" v-for="brand in brands">
-          <a class="title hover:underline text-xs/loose" :href="brand.url" target="_blank">{{ brand.name }}<i class='bx bx-link-external'></i></a>
+          <a class="font-title hover:underline text-xs/loose" :href="brand.url" target="_blank">{{ brand.name }}<i class='bx bx-link-external'></i></a>
         </li>
       </ul>
     </div>
@@ -53,10 +53,3 @@ fetchBrands()
   </div>
 </footer>
 </template>
-
-<style>
-.ice-cream {
-  
-}
-
-</style>
