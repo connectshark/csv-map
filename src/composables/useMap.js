@@ -10,6 +10,8 @@ export default (filterList) => {
   const userMarker = ref(null)
   const iceIcon = ref(null)
 
+  const stores = ref([])
+
   const {
     filterPointsBounds
   } = useDistance()
@@ -30,6 +32,7 @@ export default (filterList) => {
       })
     }
     markersGroup.value.clearLayers()
+    stores.value = list
     list.forEach(place => {
       const icon = place.ice ? iceIcon.value : marketIcon.value
       const marker = L.marker([place.lat, place.lng], {
@@ -97,6 +100,7 @@ export default (filterList) => {
   return {
     init,
     resetMarker,
-    panTo
+    panTo,
+    stores
   }
 }

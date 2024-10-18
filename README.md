@@ -1,5 +1,7 @@
 # famiice-map
 
+輕鬆的方式快速查詢附近全家是否有冰淇淋可吃
+
 [![create-release](https://github.com/connectshark/famiice-map/actions/workflows/create-release.yml/badge.svg?branch=main)](https://github.com/connectshark/famiice-map/actions/workflows/create-release.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/connectshark/famiice-map.svg?style=flat)](https://github.com/connectshark/famiice-map)
 ![GitHub stars](https://img.shields.io/github/stars/connectshark/famiice-map.svg?style=social&label=Stars&style=plastic)
@@ -13,7 +15,30 @@
 
 ## 目錄
 
+- [總覽](#總覽)
+  - [截圖](#截圖)
+  - [DEMO](#demo)
+- [過程](#過程)
+  - [專案使用技術](#專案使用技術)
 - [版權](#版權)
+
+## 總覽
+### 截圖
+
+[![截圖](/readme/cover.png)](https://famiice-map.pages.dev)
+
+### DEMO
+
+- [線上Demo位置](https://famiice-map.pages.dev)
+
+## 過程
+
+### 專案使用技術
+
+- Vue
+- TailwindCSS
+- Leaflet
+
 ## 版權
 
-[MIT](/LICENSE).
+[MIT](/LICENSE)

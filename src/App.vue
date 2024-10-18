@@ -16,7 +16,10 @@ fetchBrands()
 <template>
 <header>
   <div class="w-11/12 mx-auto max-w-5xl py-6">
-    <router-link class="p-2 rounded-md hover:bg-primary/10 inline-block font-bold" to="/">{{ SITE_NAME }}</router-link>
+    <router-link class="p-2 rounded-md hover:bg-primary/10 inline-block font-bold" to="/">
+      <img class=" inline-block align-middle" src="/ice-cream.svg" alt="ice cream logo">
+      <span class=" inline-block align-middle">{{ SITE_NAME }}</span>
+    </router-link>
   </div>
 </header>
 <main class="mb-10">
@@ -26,7 +29,10 @@ fetchBrands()
   <div class="w-11/12 mx-auto max-w-5xl grid gap-10 md:grid-cols-2 mb-10">
     <div>
       <h3 class="mb-4">
-        <router-link class="font-bold" to="/">{{ SITE_NAME }}</router-link>
+      <router-link class="p-2 rounded-md hover:bg-primary/10 inline-block font-bold" to="/">
+        <img class=" inline-block align-middle" src="/ice-cream.svg" alt="ice cream logo">
+        <span class=" inline-block align-middle">{{ SITE_NAME }}</span>
+      </router-link>
       </h3>
       <p>
         <a class="hover:bg-slate-900 inline-block p-1 rounded-md" href="mailto:contact@nosegates.com">

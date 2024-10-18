@@ -12,7 +12,7 @@ const filterService = ref([
   'mont-blanc-famiice'
 ])
 
-const { init, resetMarker, panTo } = useMap(filterService)
+const { init, resetMarker, panTo, stores } = useMap(filterService)
 watch(filterService, resetMarker)
 const { fetchStore } = useCsvStore()
 const { doFetch: fetchGeo, result, loading,  error: geoError, success: geoSuccess } = useGeo()
@@ -32,7 +32,7 @@ onMounted(async () => {
 </script>
 
 <template>
-<div class="grid gap-10 md:grid-cols-[1fr_3fr] md:w-11/12 mx-auto max-w-5xl">
+<div class="grid gap-8 md:grid-cols-[1fr_3fr] md:w-11/12 mx-auto max-w-5xl">
   <section class="md:col-start-2">
     <div class="aspect-square md:aspect-video mb-4" id="map"></div>
     <div>
@@ -61,5 +61,28 @@ onMounted(async () => {
       </li>
     </ul>
   </aside>
+  <section class="md:col-start-2 w-11/12 mx-auto md:w-full">
+    <div class="mb-8">
+      <h3>
+        <img class="w-8 inline-block align-middle" src="/ice-cream.svg" alt="ice">
+        <span class="inline-block align-middle">有冰淇淋店</span>
+      </h3>
+      <TransitionGroup class="*:bg-primary/10 *:p-3 *:rounded-xl *:mb-2" name="list" tag="ul">
+        <li class="last:mb-0" v-for="item in stores.filter(store => store.ice)" :key="item.id">
+          <p>{{ item.name }}</p>
+        </li>
+      </TransitionGroup>
+    </div>
+    <div>
+      <h3>
+        <span class="inline-block align-middle">無冰淇淋店</span>
+      </h3>
+      <ul class=" *:bg-primary/10 *:p-3 *:rounded-xl *:mb-2">
+        <li class="last:mb-0" v-for="item in stores.filter(store => !store.ice)" :key="item.id">
+          <p>{{ item.name }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 </div>
 </template>
