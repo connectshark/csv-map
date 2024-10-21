@@ -3,7 +3,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/connectshark/csv-map"
+    "url": "https://github.com/connectshark/famiice-map"
   },
   "license": "MIT",
   "version": "0.1.0",
