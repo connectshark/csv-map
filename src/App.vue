@@ -26,7 +26,7 @@ fetchBrands()
   <router-view />
 </main>
 <footer class=" bg-slate-950 text-slate-50 py-10">
-  <div class="w-11/12 mx-auto max-w-5xl grid gap-10 md:grid-cols-2 mb-10">
+  <div class="w-11/12 mx-auto max-w-5xl grid gap-10 md:grid-cols-3 mb-10">
     <div>
       <h3 class="mb-4">
       <router-link class="p-2 rounded-md hover:bg-primary/10 inline-block font-bold" to="/">
@@ -40,7 +40,7 @@ fetchBrands()
         </a>
       </p>
     </div>
-    <div>
+    <div class=" md:col-start-3">
       <h5 class="title mb-4"><i class="bx bx-cube-alt" />Brands</h5>
       <ul class="*:mb-1">
         <li class="last:mb-0" v-for="brand in brands">
