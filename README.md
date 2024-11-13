@@ -20,6 +20,7 @@
   - [DEMO](#demo)
 - [過程](#過程)
   - [專案使用技術](#專案使用技術)
+- [環境變數](#環境變數)
 - [版權](#版權)
 
 ## 總覽
@@ -38,6 +39,12 @@
 - Vue
 - TailwindCSS
 - Leaflet
+
+## 環境變數
+
+```
+VITE_SITE_TITLE=Famiice Map
+```
 
 ## 版權
 
